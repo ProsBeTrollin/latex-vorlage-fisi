@@ -50,7 +50,7 @@
 
 \phantomsection\listoffigures%\cleardoublepage
 \phantomsection\listoftables%\cleardoublepage
-\phantomsection\lstlistoflistings%\cleardoublepage
+%\phantomsection\lstlistoflistings%\cleardoublepage
 
 \newcommand{\abkvz}{Abkürzungsverzeichnis}
 \renewcommand{\nomname}{\abkvz}
@@ -59,6 +59,13 @@
 \addcontentsline{toc}{section}{\abkvz}
 \input{Allgemein/Abkuerzungen.tex}
 %\clearpage
+% Literatur ------------------------------------------------------------------
+%\clearpage
+\renewcommand{\refname}{Literaturverzeichnis}
+\bibliography{Allgemein/Bibliographie}
+\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses.
+\clearpage
+
 
 % Inhalt ---------------------------------------------------------------------
 \pagenumbering{arabic}
@@ -66,10 +73,10 @@
 
 % Literatur ------------------------------------------------------------------
 %\clearpage
-renewcommand{\refname}{Literaturverzeichnis}
-\bibliography{Allgemein/Bibliographie}
-\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses.
-\clearpage
+%renewcommand{\refname}{Literaturverzeichnis}
+%\bibliography{Allgemein/Bibliographie}
+%\bibliographystyle{Allgemein/natdin} % DIN-Stil des Literaturverzeichnisses.
+%\clearpage
 
 % Anhang ---------------------------------------------------------------------
 %\clearpage
