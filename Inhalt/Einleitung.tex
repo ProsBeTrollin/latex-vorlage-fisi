@@ -5,11 +5,11 @@
 Die folgende Projektdokumentation erläutert den Ablauf des IHK-Abschlussprojektes, das der Autor im Rahmen seiner Ausbildung zum Fachinformatiker für Systemintegration durchgeführt hat. 
 Alle Einkaufspreise und Kalkulationen wurden abgeändert, da sie unter das Betriebsgeheimnis fallen. 
 Aufgrund von Datenschutzbestimmungen müssen Personen und Organisationen, die im Zusammenhang mit diesem Projekt stehen, anonym bleiben und IP-Adressen und Gerätenamen aufgrund des Datenschutzes abgeändert werden. 
- Daher werden Personen und Organisationen, die die Dienste der ARKTIS IT Solutions GmbH in Anspruch nehmen im Folgenden nur als Kunde bezeichnet. 
+ Daher werden Personen und Organisationen, die die Dienste der \ac{Arktis} in Anspruch nehmen im Folgenden nur als Kunde bezeichnet. 
 
 \subsection{Projektumfeld} 
 \label{sec:Projektumfeld}
-Der Ausbildungsbetrieb ARKTIS IT solutions GmbH (kurz ARKTIS GmbH) ist ein mittelständischer IT-Dienstleister mit Hauptsitz in Berlin. Die ARKTIS GmbH beschäftigt zur Zeit ca. 158 MitarbeiterInnen und bietet Technologielösungen mit den Schwerpunkten IT Security, IT-Infrastrukturmanagement, Integrierte Kommunikationslösungen, Intelligente Gebäudetechnik und Digitalisierung an. Beim Kunden handelt es sich um eine Gesamtschule. Der gesamte Schulcampus umfasst ca. 34.000 Quadratmeter und das Schulgebäude hat 30 Klassenräume, welche auf 3 Stockwerke verteilt sind. Der Kunde hat aktuell für die festen Arbeitsplätze ein kabelgebundenes Netzwerk mit Zugang zum Internet über deren Internetprovider.   
+Der Ausbildungsbetrieb \acs{Arktis} ist ein mittelständischer IT-Dienstleister mit Hauptsitz in Berlin. Die \ac{Arktis} beschäftigt zur Zeit ca. 158 MitarbeiterInnen und bietet Technologielösungen mit den Schwerpunkten IT Security, IT-Infrastrukturmanagement, Integrierte Kommunikationslösungen, Intelligente Gebäudetechnik und Digitalisierung an. Beim Kunden handelt es sich um eine Gesamtschule. Der gesamte Schulcampus umfasst ca. 34.000 Quadratmeter und das Schulgebäude hat 30 Klassenräume, welche auf 3 Stockwerke verteilt sind. Der Kunde hat aktuell für die festen Arbeitsplätze ein kabelgebundenes Netzwerk mit Zugang zum Internet über deren Internetprovider.   
 
 Zum Umfeld gehören auch die Schnittstellen, s. \ref{sec:Projektschnittstellen}.
 
@@ -49,15 +49,15 @@ Ein kabelloses Netzwerk ist hierfür sehr gut geeignet, da es im Vergleich zum k
 \subsubsection{Organisatorische Projektschnittstellen}
 Das Projekt wurde in dem Team IT-Infrastruktur durchgeführt, welche auch die Räumlichkeiten und nötigen Arbeitsmittel zur Verfügung gestellt hat. 
 Da es sich bei dem Projekt um eine Erweiterung und Teilerneuerung eines bestehenden Netzwerkes handelt, kam es während des Projektes zu einer engen Zusammenarbeit mit der IT Abteilung des Kunden um sicherzustellen, dass die bestehenden Netzwerkkomponenten wie z.B. Webserver und Netzwerkdrucker nach der Durchführung komplett funktionstüchtig sind. 
-Die Bestellung der benötigten Komponenten und den Kontakt mit den Lieferanten hat die Einkaufsabteilung der Arktis GmbH übernommen. 
+Die Bestellung der benötigten Komponenten und den Kontakt mit den Lieferanten hat die Einkaufsabteilung der \ac{Arktis} übernommen. 
 Die Personalzuweisung der benötigten Mitarbeiter fand in Koordination mit dem PMO (Projekt Management Office) der Abteilung IT-Infrastruktur statt.    
 \subsubsection{Technische Projektschnittstellen}
-Die eingesetzten Netzwerkkomponenten kommunizieren mit den VM-Servern des Kunden auf welchen die IT Abteilung vor Ort ihre Domäne und Services betreibt. 
+Die eingesetzten Netzwerkkomponenten sollen mit den VM-Servern des Kunden kommunizieren, auf welchen die IT Abteilung vor Ort in Zukunft ihre Domäne und Services betreiben will. 
 Darüber hinaus melden sich die mobilen Endgeräte im Schulgebäude über die Access Points im Schulnetzwerk an. 
-Die benutzten Netzwerkkomponenten wurden über das Webinterface mit den Tools LANconfig und LANmonitor konfiguriert.
+Die benutzten Netzwerkkomponenten wurden über das Webinterface mit den Tools LANconfig, WLANmonitor und LANmonitor konfiguriert.
 \subsubsection{Personenelle Schnittstellen}
-Bei der Lieferung und Installation der Netzwerkkomponenten hat mir Herr \censor{Marcel Ernst} geholfen. 
-Er ist bei der Arktis GmbH der Experte bezüglich LANCOM-Lösungen und ist für das Hauptprojekt (Netzwerkerneuerung für Schulen im Landkreis \censor{Potsdam Mittelmark}) verantwortlich. 
+Bei der Lieferung und Installation der Netzwerkkomponenten hat mir ein Mitarbeiter der Abteilung It-Infrastruktur geholfen. 
+Er ist bei der \ac{Arktis} der Experte bezüglich LANCOM-Lösungen und ist für das Hauptprojekt (Netzwerkerneuerung für Schulen in einem Landkreis in Brandenburg) verantwortlich. 
 Bei der Inventarisierung der benutzten Netzwerkkomponenten haben mich die anderen Auszubildenen der Abteilung IT-Infrastruktur unterstützt. 
 \begin{comment}
 	\item Mit welchen anderen Systemen interagiert die Anwendung (technische Schnittstellen)?
@@ -69,11 +69,11 @@ Bei der Inventarisierung der benutzten Netzwerkkomponenten haben mich die andere
 
 \subsection{Projektabgrenzung} 
 \label{sec:Projektabgrenzung}
-Das Projekt ist ein Teilprojekt der Netzwerkerneuerung für Schulen im Landkreis \censor{Potsdam Mittelmark}, betrachtet aber nur die Arbeiten an einer Schule. 
+Das Projekt ist zwar ein Teilprojekt der Netzwerkerneuerung für Schulen in einem Landkreis in Brandenburg, betrachtet aber nur die Arbeiten an einer Schule. 
 Außerdem beschränkt sich das Projekt auf die Planung des Netzwerklayouts, die Konfiguration der Netzwerkkomponenten und die Ausarbeitung eines Sicherheitskonzepts. 
 Die passive Verkabelung vor Ort für die benötigten Netzwerkdosen hat eine andere Firma übernommen. 
 Die Montage der Access Points hat nach Kundenwunsch das Personal der Schule übernommen, um Kosten einzusparen. 
-Die Access Points wurden demnach bei uns inventarisiert und danach zum Kunden geschickt. 
+Die Access Points wurden demnach bei uns inventarisiert und danach zum Kunden geschickt. Die VM-Server, die der Kunde über das Netzwerk betreiben will werden von uns nur angebunden, die Einrichtung und Konfiguration ist Aufgabe der IT-Abteilung der Schule.
 Begehungen und WLAN-Ausleuchtungen würden über den Rahmen dieses Projekts hinaus gehen und wurden deswegen nicht betrachtet.
 \begin{comment}
 	\item Was ist explizit nicht Teil des Projekts (\insb bei Teilprojekten)?

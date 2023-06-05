@@ -2,11 +2,14 @@
 \section{Analysephase} 
 \label{sec:Analysephase}
 
+\subsection{Kundengespräch}
+\label{sec:Kundengespräch}
+Zu Beginn des Projekts wurde ein Kundengespräch per Telefonkonferenz durchgeführt. Anwesend war der Leiter der IT-Abteilung der Schule, ein weiterer Mitarbeiter der Arktis, und ich. In diesem Gespräch wurden die Anforderungen und der aktuelle Zustand des Schulnetzwerkes konkretisiert und dokumentiert. Im Anschluss überreichte der Kunde uns die Ergebnisse der Funkausleuchtung, welche vor dem Beginn des Projektes abgeschlossen wurde. Bei der Funkausleuchtung wurden die idealen Montagepunkte für die Access Points  und die benötigte Anzahl der Access Points ermittelt, indem an verschiedenen möglichen Installationspunkten die Signalstärke gemessen wurde, um sicherzustellen dass von jedem Teil des Schulgebäudes ein störungsfreier Netzwerkzugang möglich ist. Mit Hilfe der zusätzlichen Informationen konnte ein Ist - und Soll-Konzept im Anschluss an das Gespräch ausgearbeitet werden.
 
 \subsection{Ist-Analyse} 
 \label{sec:IstAnalyse}
 Die Schule hat für ihre festen Arbeitsplätze ein kabelgebundenes Netzwerk mit Zugang zum Internet über deren Internet Provider. 
-Die Leitung vom Internet Provider kommt in einem Serverraum im 1.UG(Untergeschoss) an und geht dort auf eine FritzBox die als Gateway zum Internet agiert.
+Die Leitung vom Internet Provider kommt in einem Serverraum im 1. \ac{UG} an und geht dort auf einen Router \ac{VDSL}-Router, welcher als Gateway zum Internet agiert. Von der \ac{LAN}-Schnittstelle des Routers ist der Router per Kupferkabel mit einem Switch verbunden, welcher über ein Patchfeld mit den festen Arbeitsplätzen verbunden ist (siehe NetzwerkplanIST). Auf dem Switch gibt es keine \ac{VLAN}
 
 
 \begin{itemize}
