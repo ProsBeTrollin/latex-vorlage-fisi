@@ -9,7 +9,7 @@ Zu Beginn des Projekts wurde ein Kundengespräch per Telefonkonferenz durchgefü
 \subsection{Ist-Analyse} 
 \label{sec:IstAnalyse}
 Der Kunde hat für seine festen Arbeitsplätze ein kabelgebundenes Netzwerk mit Zugang zum Internet über seinen Internet Provider. 
-Die Glasfaserleitung vom Internet Provider kommt in einem Serverraum im 1. \ac{UG} an und geht dort auf einen \acs{VDSL}-Router, welcher als Gateway zum Internet agiert. Von der Local Area Network \acs{LAN}-Schnittstelle des Routers ist der Router per Kupferkabel mit einem Switch verbunden, welcher über ein Patchfeld mit den festen Arbeitsplätzen verbunden ist (siehe NetzwerkplanIST). Die Endgeräte an den festen Arbeitsplätzen sind alle in einem Netz. Die Endgeräte bekommen ihre IP Adresse, Subnetzmaske und ihr Standardgateway vom Router per \acs{DHCP} dynamisch zugewiesen. Die Schule plant im Unterricht verstärkt mobile Endgeräte zu benutzen und benötigt für diese Geräte eine Anbindung ans Schulnetzwerk und Internet. Da der Kunde vor hat die Anzahl der Endgeräte im Schulnetzwerk wesentlich auszubauen, wird außerdem ein neues Netzwerkkonzept benötigt, welches besser für eine größere Anzahl an Endgeräten geeignet ist. 
+Die Glasfaserleitung vom Internet Provider kommt in einem Serverraum im 1. \ac{UG} an und geht dort auf einen \acs{VDSL}-Router, welcher als Gateway zum Internet agiert. Von der Local Area Network \acs{LAN}-Schnittstelle des Routers ist der Router per Kupferkabel mit einem Switch verbunden, welcher über ein Patchfeld mit den festen Arbeitsplätzen verbunden ist (siehe \Anhang{app:NetzwerkplanIST}). Die Endgeräte an den festen Arbeitsplätzen sind alle in einem Netz. Die Endgeräte bekommen ihre IP Adresse, Subnetzmaske und ihr Standardgateway vom Router per \acs{DHCP} dynamisch zugewiesen. Die Schule plant im Unterricht verstärkt mobile Endgeräte zu benutzen und benötigt für diese Geräte eine Anbindung ans Schulnetzwerk und Internet. Da der Kunde vor hat die Anzahl der Endgeräte im Schulnetzwerk wesentlich auszubauen, wird außerdem ein neues Netzwerkkonzept benötigt, welches besser für eine größere Anzahl an Endgeräten geeignet ist. 
 
 \subsection{Soll-Analyse}
 \label{sec:Soll-Analyse}
@@ -17,7 +17,7 @@ Der Kunde plant das Netzwerk zu modernisieren, ausfallsicherer zu gestalten und 
 Die eingesetzten Access Points sollen gleichzeitig im 2.4GHz -und 5GHz Frequenzband senden und werden zentral von einem WLAN Controller gesteuert.
 Es sollen mehrere Netze ausgestrahlt werden (z.B. Gast, Schüler, Lehrer). 
 Die Berechtigungen der Nutzer verschiedener Netzwerke sind durch ein auf dem WLAN-Controller integriertes Firewall-Regelwerk klar definiert und getrennt. 
-Die Kommunikation innerhalb des WLANs soll nach aktuellen Sicherheitsstandards verschlüsselt werden. Außerdem wurde ein Netzwerklayout angelegt, welches 
+Die Kommunikation innerhalb des WLANs soll nach aktuellen Sicherheitsstandards verschlüsselt werden. Das neue Netzwerklayout soll eine Sternförmige Topologie haben mit einem Cluster aus 2 Layer 3 Switchen im Mittelpunkt. Beim Clustern werden 
 
 \begin{comment}
 	\item Wie ist die bisherige Situation (\zB bestehende Programme, Wünsche der Mitarbeiter)?
@@ -45,23 +45,6 @@ Der Mitarbeiter der mit mir die Installation vor Ort durchgeführt hat, wurde mi
 \subsection{Amortisationsdauer}
 \label{sec:Amortisationsdauer}
 Eine genaue Armortisationsdauer ist für dieses Projekt schwer zu ermitteln, weil ich nur vermuten kann, wie die Prozesse des Kunden durch dieses Projekt verbessert werden könnten. Durch die Digitalisierung des Unterrichtsalltages können einige Materialkosten in Form von Papier und Toner eingespart werden. Darüber hinaus können durch ein Netzwerk mit besserer Ausfallsicherheit Fälle vermieden werden, wo die Produktivität unter Netzwerkausfällen leidet. Ein besser abgesichertes Netzwerk schützt außerdem vor wirtschaftlichen Schäden die bei Hackerangriffen entstehen können. 
-\begin{itemize}
-	\item Welche monetären Vorteile bietet das Projekt (\zB Einsparung von Lizenzkosten, Arbeitszeitersparnis, bessere Usability, Korrektheit)?
-	\item Wann hat sich das Projekt amortisiert?
-\end{itemize}
-
-\paragraph{Beispielrechnung (verkürzt)}
-Bei einer Zeiteinsparung von 10 Minuten am Tag für jeden der 25 Anwender und 220 Arbeitstagen im Jahr ergibt sich eine gesamte Zeiteinsparung von 
-\begin{eqnarray}
-25 \cdot 220 \mbox{ Tage/Jahr} \cdot 10 \mbox{ min/Tag} = 55000 \mbox{ min/Jahr} \approx 917 \mbox{ h/Jahr} 
-\end{eqnarray}
-
-Dadurch ergibt sich eine jährliche Einsparung von 
-\begin{eqnarray}
-917 \mbox{h} \cdot \eur{(25 + 15)}{\mbox{/h}} = \eur{36680}
-\end{eqnarray}
-
-Die Amortisationszeit beträgt also $\frac{\eur{2739,20}}{\eur{36680}\mbox{/Jahr}} \approx 0,07 \mbox{ Jahre} \approx 4 \mbox{ Wochen}$.
 
 \subsection{Qualitätsanforderungen}
 \label{sec:Qualitaetsanforderungen}
@@ -80,17 +63,7 @@ Die Analyse des Schutzbedarfes des kabellosen Netzwerkes habe ich nach Empfehlun
 
 \subsection{Schutzmaßnahmen}
 \label{sec:Schutzmaßnahmen}
-Im Sinne der Vertraulichkeit des Netzwerkes, wird ein Firewallregelwerk angelegt, welches 
+Im Sinne der Vertraulichkeit des Netzwerkes, wurde ein Firewallregelwerk angelegt, welches pro Netzwerk klar definiert, auf welche anderen Netzwerke man zugreifen kann. Darüber hinaus wurde sich bei der Authentifizierungs -und Verschlüsselungsmethode für WPA2 mit \ac{PSK} als Anmeldemethode entschieden. Die Passwortwahl wurde dem Kunden überlassen, es wurde aber eine hohe Passwortkomplexität empfohlen, damit das Passwort von potentiellen Angreifern nicht zu leicht zu erraten ist. WPA3 wurde bei der Auswahl auch beachtet, da es einige Sicherheitslücken von WPA2  schließt. Da die Schule aber einige Endgeräte besitzt die veraltet sind und WPA3 teilweise nicht unterstützen würden, wurde es sich dagegen entschieden. Um Die Verfügbarkeit zu schützen wurden die Switches  
 \begin{comment}
 	\item Welche Schutznahmen werden unternommen um das System abzichern (\zB gegenüber fremden Zugriff, Sicherheitslücken, Updates, Ausfall des Systems \etc)?
 \end{comment}
-
-%%\subsection{Lastenheft/Fachkonzept}
-%%\label{sec:Lastenheft}
-%%\begin{itemize}
-	%\item Auszüge aus dem Lastenheft/Fachkonzept, wenn es im Rahmen des Projekts erstellt wurde.
-	%\item Mögliche Inhalte: Funktionen des Programms (Muss/Soll/Wunsch), User Stories, Benutzerrollen
-%%\end{itemize}
-
-%\paragraph{Beispiel}
-%Ein Beispiel für ein Lastenheft findet sich im \Anhang{app:Lastenheft}. 
