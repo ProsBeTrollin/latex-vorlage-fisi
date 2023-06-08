@@ -7,33 +7,24 @@
 \subsection{Personalkosten}
 \label{app:Personalkosten}
 \tabelleAnhang{Personalkosten}
-
+\subsection{Gesamtkostenaufstellung}
+\label{app:Gesamtkostenaufstellung}
+\tabelleAnhang{Gesamtkosten}
 %\subsection{NetzwerkplanIST}
 %\label{app:NetzwerkplanIST}
-\includepdf[fitpaper =true,scale=.6,pagecommand= \subsection{NetzwerkplanIST}\label{app:NetzwerkplanIST}]{Drawing.pdf}
+\includepdf[scale=1.2,pagecommand= \subsection{NetzwerkplanIST}\label{app:NetzwerkplanIST}]{Drawing.pdf}
+\clearpage
+%\begin{landscape}
+\includepdf[scale=.9,pagecommand= \subsection{NetzwerkplanSOLL}\label{app:NetzwerkplanSOLL}]{Netzwerkplan_Soll.pdf}
+%\end{landscape}
+%\includepdf[fitpaper=true,scale=.8,pagecommand= \subsection{Materialdisposition}\label{app:Materialdisposition}]{Materialdisposition.pdf}
+\subsection{Materialdisposition}
+\label{app:Materialdisposition}
+\includegraphics[scale =.8]{Materialdisposition.PNG}
+
 \subsection{Registrierung}
 \label{Registrierung}
-\includegraphics[scale =0.8]{LANCOMREGISTRIERUNG.png}
-
-\subsection{Use Case-Diagramm}
-\label{app:UseCase}
-Use Case-Diagramme und weitere {UML}-Diagramme kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://metauml.sourceforge.net/old/usecase-diagram.html}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{UseCase.pdf}{0.7}
-\caption{Use Case-Diagramm}
-\end{figure}
-
-\input{Anhang/AnhangPflichtenheft.tex}
-
-\subsection{Datenbankmodell}
-\label{app:Datenbankmodell}
-ER-Modelle kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://www.texample.net/tikz/examples/entity-relationship-diagram/}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{database.pdf}{1}
-\caption{Datenbankmodell}
-\end{figure}
+\includegraphics[scale =0.5]{LANCOMREGISTRIERUNG.png}
 \clearpage
 
 \input{Anhang/AnhangEntwuerfe.tex}
