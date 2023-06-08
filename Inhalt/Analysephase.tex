@@ -17,7 +17,7 @@ Der Kunde plant das Netzwerk zu modernisieren, ausfallsicherer zu gestalten und 
 Die eingesetzten Access Points sollen gleichzeitig im 2.4GHz -und 5GHz Frequenzband senden und werden zentral von einem WLAN Controller gesteuert.
 Es sollen mehrere Netze ausgestrahlt werden (z.B. Gast, Schüler, Lehrer). 
 Die Berechtigungen der Nutzer verschiedener Netzwerke sind durch ein auf dem WLAN-Controller integriertes Firewall-Regelwerk klar definiert und getrennt. 
-Die Kommunikation innerhalb des WLANs soll nach aktuellen Sicherheitsstandards verschlüsselt werden. Das neue Netzwerklayout soll eine Sternförmige Topologie mit einem Cluster aus 2 Layer 3 Switches im Mittelpunkt haben. Die Layer 3 Switches übernehmen im Schulnetzwerk das Routing zwischen den Netzen. Es soll pro Stockwerk einen Serverschrank mit Layer 2 Switches geben, welche die Access Points im Gebäude über \ac{POE} mit Strom versorgen. Die Layer 2 Switches sollen über einen \ac{LAG} per Glasfaser mit dem Layer 3 Switchcluster redundant verbunden sein. Durch den LAG werden mehrere physikalische Verbindungen zwischen zwei Switches zu einer logischen Verbindung gebündelt. Der LAG sorgt für eine höhere Ausfallsicherheit. 
+Die Kommunikation innerhalb des WLANs soll nach aktuellen Sicherheitsstandards verschlüsselt werden. Das neue Netzwerklayout soll eine Sternförmige Topologie mit einem Cluster aus 2 Layer 3 Switches im Mittelpunkt haben. Die Layer 3 Switches übernehmen im Schulnetzwerk das Routing zwischen den Netzen. Es soll pro Stockwerk einen Serverschrank mit Layer 2 Switches geben, welche die Access Points im Gebäude über \ac{POE} mit Strom versorgen. Die Layer 2 Switches sollen über einen \ac{LAG} per Glasfaser mit dem Layer 3 Switchcluster redundant verbunden sein. Durch den LAG werden mehrere physikalische Verbindungen zwischen zwei Switches zu einer logischen Verbindung gebündelt. Der LAG sorgt für eine höhere Ausfallsicherheit. Hierzu wurde ein Netzwerkplan angelegt.
 
 \begin{comment}
 	\item Wie ist die bisherige Situation (\zB bestehende Programme, Wünsche der Mitarbeiter)?
@@ -25,7 +25,7 @@ Die Kommunikation innerhalb des WLANs soll nach aktuellen Sicherheitsstandards v
 \end{comment}
 \subsection{Auswahl der Hardwarekomponenten nach Kundenanforderungen}
 \label{app:Auswahl der Hardwarekomponenten nach Kundenanforderungen}
-Die benötigte Hardware wurde durch Nutzung einer Entscheidungsmatrix ausgewählt und den Kundenanforderungen angepasst. Ein Beispiel anhand der Auswahl des Modells für den Layer 2 Switch steht in Tabelle 2. Bei den Switches gab es 2 
+Die benötigte Hardware wurde durch Nutzung einer Entscheidungsmatrix ausgewählt und den Kundenanforderungen angepasst. Ein Beispiel anhand der Auswahl des Modells für den Layer 2 Switch steht in Tabelle 2. Bei den Switches gab es 2 Features, die vorhanden sein mussten(Stacking-Support und \ac{POE}Support). Diese zwei Aspekte haben die alternativen extrem eingeschränkt, sodass 
 
 \subsection{Wirtschaftlichkeitsanalyse}
 \label{sec:Wirtschaftlichkeitsanalyse}
@@ -46,12 +46,12 @@ Eine genaue Armortisationsdauer ist für dieses Projekt schwer zu ermitteln, wei
 \subsection{Qualitätsanforderungen}
 \label{sec:Qualitaetsanforderungen}
 \begin{itemize}
-	\item Welche Qualitätsanforderungen werden an die Anwendung gestellt (\zB hinsichtlich Performance, Usability, Effizienz \etc (siehe \citet{ISO9126}))?
+	\item Welche Qualitätsanforderungen werden an die Anwendung gestellt (\zB hinsichtlich Performance, Usability, Effizienz \etc 
 \end{itemize}
 
 \subsection{Schutzbedarf}
 \label{sec:Schutzbedarf}
-Die Analyse des Schutzbedarfes des kabellosen Netzwerkes habe ich nach Empfehlungen des \ac{BSI} durchgeführt. Das Schutzziel der Vertraulichkeit habe ich mit dem Schutzbedarf hoch eingestuft, weil im Schulnetzwerk auch vertrauliche Informationen transportiert werden, welche vor Zugriff unbefugter Personen zu schützen sind. Die Integrität hat einen mittleren Schutzbedarf, da es zwar generell zu verhindern ist, dass Unbefugte in der Lage sind Daten zu manipulieren, aber fehlerhafte bzw. manipulierte Dateien eine geringe Auswirkung haben und leicht zu erkennen sind.
+Die Analyse des Schutzbedarfes des kabellosen Netzwerkes habe ich nach Empfehlungen des \ac{BSI} (siehe ) durchgeführt. Das Schutzziel der Vertraulichkeit habe ich mit dem Schutzbedarf hoch eingestuft, weil im Schulnetzwerk auch vertrauliche Informationen transportiert werden, welche vor Zugriff unbefugter Personen zu schützen sind. Die Integrität hat einen mittleren Schutzbedarf, da es zwar generell zu verhindern ist, dass Unbefugte in der Lage sind Daten zu manipulieren, aber fehlerhafte bzw. manipulierte Dateien eine geringe Auswirkung haben und leicht zu erkennen sind.
 
 
 \begin{comment}
@@ -60,7 +60,7 @@ Die Analyse des Schutzbedarfes des kabellosen Netzwerkes habe ich nach Empfehlun
 
 \subsection{Schutzmaßnahmen}
 \label{sec:Schutzmaßnahmen}
-Im Sinne der Vertraulichkeit des Netzwerkes, wurde ein Firewallregelwerk angelegt, welches pro Netzwerk klar definiert, auf welche anderen Netzwerke man zugreifen kann. Darüber hinaus wurde sich bei der Authentifizierungs -und Verschlüsselungsmethode für WPA2 mit \ac{PSK} als Anmeldemethode entschieden. Die Passwortwahl wurde dem Kunden überlassen, es wurde aber eine hohe Passwortkomplexität empfohlen, damit das Passwort von potentiellen Angreifern nicht zu leicht zu erraten ist. WPA3 wurde bei der Auswahl auch beachtet, da es einige Sicherheitslücken von WPA2  schließt. Da die Schule aber einige Endgeräte besitzt die veraltet sind und WPA3 teilweise nicht unterstützen würden, wurde es sich dagegen entschieden. Um Die Verfügbarkeit zu schützen wurden die Switches  
+Im Sinne der Vertraulichkeit des Netzwerkes, wurde ein Firewallregelwerk angelegt, welches pro Netzwerk klar definiert, auf welche anderen Netzwerke man zugreifen kann. Darüber hinaus wurde sich bei der Authentifizierungs -und Verschlüsselungsmethode für WPA2 mit \ac{PSK} als Anmeldemethode entschieden. Die Passwortwahl wurde dem Kunden überlassen, es wurde aber eine hohe Passwortkomplexität empfohlen, damit das Passwort von potentiellen Angreifern nicht zu leicht zu erraten ist. WPA3 wurde bei der Auswahl auch beachtet, da es einige Sicherheitslücken von WPA2  schließt. Da die Schule aber einige Endgeräte besitzt die veraltet sind und WPA3 teilweise nicht unterstützen würden, wurde es sich dagegen entschieden. Um die Verfügbarkeit zu schützen wurden die Switches untereinander redundant mit einem \ac{LAG} verbunden, wodurch die Ausfallsicherheit werden konnte.  
 \begin{comment}
 	\item Welche Schutznahmen werden unternommen um das System abzichern (\zB gegenüber fremden Zugriff, Sicherheitslücken, Updates, Ausfall des Systems \etc)?
 \end{comment}

@@ -1,38 +1,24 @@
 % !TEX root = ../Projektdokumentation.tex
 \section{Implementierungsphase} 
 \label{sec:Implementierungsphase}
-
+\subsection{Bestellung}
+\label{sec:Bestellung}
+Bei der Bestellung der nötigen Arbeitsmaterialien wurde ich vom kaufmännischem Projektleiter unterstützt. Die \ac{Arktis} konnte dank dem LANCOM Partner Status Die Switches, Access Points und den WLAN-Controller von LANCOM direkt zu besseren Konditionen bestellen. Das restliche Material hat die \ac{Arktis} Standardlieferanten bestellt. Durch die langjährige Partnerschaft mit dem Händler konnte die Arktis auch hier zu besseren Konditionen einkaufen als es normalerweise möglich wäre.
 \subsection{Inventarisierung und Lizenzaktivierung der Netzwerkgeräte}
 \label{Inventarisierung und Lizenzaktivierung der Netzwerkgeräte}
 Nachdem die bestellten Netzwerkgeräte bei der \ac{Arktis} im Lager angekommen sind, habe wurden mithilfe der anderen Auszubildenen der Abteilung IT-Infrastruktur alle Geräte inventarisiert und auf der LANCOM Webseite die Garantieerweiterung aktiviert. 
 
 \subsection{Einrichten des Testaufbaus}
 \label{sec:Einrichten des Testaufbaus}
-Nach der Inventarisierung wurden die Access Points verschickt und die anderen Netzwerkkomponenten zum Testaufbau im Testlabor der Abteilung IT Infrastruktur aufgebaut. Die Switches und der WLAN Controller wurden mit Strom versorgt und über das Testnetz in der Laborumgebung erreichbar gemacht damit die Komponenten vorkonfiguriert werden können.
+Nach der Inventarisierung wurden die Access Points verschickt und die anderen Netzwerkkomponenten zum Testaufbau im Testlabor der Abteilung IT Infrastruktur aufgebaut. Die Switches wurden wie im Soll-Netzwerkplan über die dedizierten Stacking-Ports mit \ac{DAC} Kabeln zu einem logischen Switch verbunden. Die Switches und der WLAN Controller wurden mit Strom versorgt und über das Testnetz in der Laborumgebung erreichbar gemacht damit die Komponenten vorkonfiguriert werden können.
 
 
-\subsection{Implementierung der Benutzeroberfläche}
-\label{sec:ImplementierungBenutzeroberflaeche}
-
-\begin{itemize}
-	\item Beschreibung der Implementierung der Benutzeroberfläche, falls dies separat zur Implementierung der Geschäftslogik erfolgt (\zB bei \ac{HTML}-Oberflächen und Stylesheets).
-	\item \Ggfs Beschreibung des Corporate Designs und dessen Umsetzung in der Anwendung.
-	\item Screenshots der Anwendung
-\end{itemize}
-
-\paragraph{Beispiel}
-Screenshots der Anwendung in der Entwicklungsphase mit Dummy-Daten befinden sich im \Anhang{Screenshots}.
+\subsection{Konfiguration der Layer 2 Switches}
+\label{sec:Konfiguration der Layer 2 Switche}
+Die Switches wurden über das Tool Lanconfig per WebUI konfiguriert. Lanconfig prüft über einen Broadcast, welche Lancom Geräte sich im gleichen Netzwerk befinden wie der PC der das Programm ausführt und zeigt die Geräte dann mit IP Adresse an. Für die Anbindung an die Layer 3 Switches wurde pro Stack zuerst der \ac{LAG} angelegt. Auf den  \ac{}
 
 
-\subsection{Implementierung der Geschäftslogik}
-\label{sec:ImplementierungGeschaeftslogik}
 
-\begin{itemize}
-	\item Beschreibung des Vorgehens bei der Umsetzung/Programmierung der entworfenen Anwendung.
-	\item \Ggfs interessante Funktionen/Algorithmen im Detail vorstellen, verwendete Entwurfsmuster zeigen.
-	\item Quelltextbeispiele zeigen.
-	\item Hinweis: Wie in Kapitel~\ref{sec:Einleitung}: \nameref{sec:Einleitung} zitiert, wird nicht ein lauffähiges Programm bewertet, sondern die Projektdurchführung. Dennoch würde ich immer Quelltextausschnitte zeigen, da sonst Zweifel an der tatsächlichen Leistung des Prüflings aufkommen können.
-\end{itemize}
 
-\paragraph{Beispiel}
-Die Klasse \texttt{Com\-par\-ed\-Na\-tu\-ral\-Mo\-dule\-In\-for\-ma\-tion} findet sich im \Anhang{app:CNMI}.  
+
+
