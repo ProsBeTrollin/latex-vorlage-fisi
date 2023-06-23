@@ -1,88 +1,10 @@
 % !TEX root = ../Projektdokumentation.tex
 \section{Deploymentphase} 
 \label{sec:Deploymentphase}
+\subsection{Inbetriebnahme vor Ort}
+\label{Inbetriebnahme vor Ort}
+Der Termin zur Lieferung, Installation und Inbetriebnahme musste außerhalb der Schulzeiten passieren, weil die Arbeiten am Netzwerk sonst den Tagesbetrieb des Kunden zu stark stören würde. Die vorkonfigurierten Netzwerkkomponenten wurden von mir und einem Mitarbeiter  eingepackt und zum Kunden ausgeliefert. Da die Schule zuvor keine Verteilerräume hatte, waren die Serverschränke komplett neu und einige Portbeschriftungen auf den Patchfeldern fehlten, was die arbeiten verzögerte. Während noch die Informationen fehlten, wurden alle Netzwerkkomponenten in die richtigen Serverschränke eingebaut. Es wurden außerdem die \ac{DAC}-Kabel zum stacken der Switches gesteckt. Als der Kunde uns die nötigen Informationen mitgeteilt hat, wurden die Netzwerkkomponenten mit Strom versorgt. Hierbei wurde darauf geachtet, dass unterschiedliche Stromkreise verwendet wurden um die redundanten Netzteile (falls vorhanden) mit Strom zu versorgen. Die Serverräume hatten keine \ac{USV}. Nachdem die Switches hochgefahren sind, wurde überprüft ob der Stack sich richtig aufgebaut hat. Danach wurden alle Kabel entsprechend der Planung gesteckt und das Netzwerk wurde in Betrieb genommen.
 
-\subsection{Zielplattform}
-\label{sec:Zielplattform}
-
-\begin{itemize}
-	\item Beschreibung der Kriterien zur Auswahl der Zielplattform (\ua Programmiersprache, Datenbank, Client/Server, Hardware).
-\end{itemize}
-
-
-\subsection{Architekturdesign}
-\label{sec:Architekturdesign}
-\begin{itemize}
-	\item Beschreibung und Begründung der gewählten Anwendungsarchitektur (\zB \ac{MVC}).
-	\item \Ggfs Bewertung und Auswahl von verwendeten Frameworks sowie \ggfs eine kurze Einführung in die Funktionsweise des verwendeten Frameworks.
-\end{itemize}
-
-\paragraph{Beispiel}
-Anhand der Entscheidungsmatrix in Tabelle~\ref{tab:Entscheidungsmatrix} wurde für die Implementierung der Anwendung das \ac{PHP}-Framework Symfony\footnote{\Vgl ja}ausgewählt. 
-
-\tabelle{Entscheidungsmatrix}{tab:Entscheidungsmatrix}{Nutzwert.tex}
-
-
-\subsection{Entwurf der Benutzeroberfläche}
-\label{sec:Benutzeroberflaeche} 
-\begin{itemize}
-	\item Entscheidung für die gewählte Benutzeroberfläche (\zB GUI, Webinterface).
-	\item Beschreibung des visuellen Entwurfs der konkreten Oberfläche (\zB Mockups, Menüführung).
-	\item \Ggfs Erläuterung von angewendeten Richtlinien zur Usability und Verweis auf Corporate Design.
-\end{itemize}
-
-\paragraph{Beispiel}
-Beispielentwürfe finden sich im \Anhang{app:Entwuerfe}.
-
-
-\subsection{Datenmodell}
-\label{sec:Datenmodell}
-
-\begin{itemize}
-	\item Entwurf/Beschreibung der Datenstrukturen (\zB \acs{ERM} und/oder Tabellen\-modell, \acs{XML}-Sche\-mas) mit kurzer Beschreibung der wichtigsten (!) verwendeten Entitäten.
-\end{itemize}
-
-\paragraph{Beispiel}
-In \Abbildung{ER} wird ein \ac{ERM} dargestellt, welches lediglich Entitäten, Relationen und die dazugehörigen Kardinalitäten enthält. 
-
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{ERDiagramm.pdf}{0.6}
-\caption{Vereinfachtes ER-Modell}
-\label{fig:ER}
-\end{figure} 
-
-
-\subsection{Geschäftslogik}
-\label{sec:Geschaeftslogik}
-
-\begin{itemize}
-	\item Modellierung und Beschreibung der wichtigsten (!) Bereiche der Geschäftslogik (\zB mit Kom\-po\-nen\-ten-, Klassen-, Sequenz-, Datenflussdiagramm, Programmablaufplan, Struktogramm, \ac{EPK}).
-	\item Wie wird die erstellte Anwendung in den Arbeitsfluss des Unternehmens integriert?
-\end{itemize}
-
-\paragraph{Beispiel}
-Ein Klassendiagramm, welches die Klassen der Anwendung und deren Beziehungen untereinander darstellt kann im \Anhang{app:Klassendiagramm} eingesehen werden.
-
-\Abbildung{Modulimport} zeigt den grundsätzlichen Programmablauf beim Einlesen eines Moduls als \ac{EPK}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{modulimport.pdf}{0.9}
-\caption{Prozess des Einlesens eines Moduls}
-\label{fig:Modulimport}
-\end{figure}
-
-
-\subsection{Maßnahmen zur Qualitätssicherung}
-\label{sec:Qualitaetssicherung}
-\begin{itemize}
-	\item Welche Maßnahmen werden ergriffen, um die Qualität des Projektergebnisses (siehe Kapitel~\ref{sec:Qualitaetsanforderungen}: \nameref{sec:Qualitaetsanforderungen}) zu sichern (\zB automatische Tests, Anwendertests)?
-	\item \Ggfs Definition von Testfällen und deren Durchführung (durch Programme/Benutzer).
-\end{itemize}
-
-
-\subsection{Pflichtenheft/Datenverarbeitungskonzept}
-\label{sec:Pflichtenheft}
-\begin{itemize}
-	\item Auszüge aus dem Pflichtenheft/Datenverarbeitungskonzept, wenn es im Rahmen des Projekts erstellt wurde.
-\end{itemize}
+\subsection{Qualitätskontrolle}
+\label{app:Qualitätskontrolle}
+Nach Inbetriebnahme des Netzwerks wurde geprüft ob alle Access Points erreichbar sind. Hierfür wurde erst auf dem Webinterface des WLAN Controllers bestätigt, dass alle Access Points erreichbar sind. im Anschluss wurde vom Core Cluster ein Ping-Test zu allen Switches und dem WLAN-Controller durchgeführt. Danach bin ich und der Kunde durchs Gebäude gelaufen, um die Status LEDs der Access Points zu prüfen. Die Signalstärke wurde mithilfe eines Testlaptops für das ganze Gebäude überprüft.

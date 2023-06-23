@@ -3,23 +3,27 @@
 \label{sec:Implementierungsphase}
 \subsection{Bestellung}
 \label{sec:Bestellung}
-Bei der Bestellung der nötigen Arbeitsmaterialien wurde ich vom kaufmännischem Projektleiter unterstützt. Die \ac{Arktis} konnte dank dem LANCOM Partner Status Die Switches, Access Points und den WLAN-Controller von LANCOM direkt zu besseren Konditionen bestellen. Das restliche Material hat die \ac{Arktis} Standardlieferanten bestellt. Durch die langjährige Partnerschaft mit dem Händler konnte die Arktis auch hier zu besseren Konditionen einkaufen als es normalerweise möglich wäre.
+Bei der Bestellung der nötigen Arbeitsmaterialien wurde ich vom kaufmännischem Projektleiter unterstützt. Die \ac{Arktis} konnte dank dem LANCOM Partner Status die Switches, Access Points und den WLAN-Controller von LANCOM direkt zu besseren Konditionen bestellen. Das restliche Material hat die \ac{Arktis} bei Standardlieferanten bestellt. Durch die langjährige Partnerschaft mit dem Händler konnte die Arktis auch hier zu besseren Konditionen einkaufen als es normalerweise möglich wäre.
 \subsection{Inventarisierung und Lizenzaktivierung der Netzwerkgeräte}
 \label{Inventarisierung und Lizenzaktivierung der Netzwerkgeräte}
-Nachdem die bestellten Netzwerkgeräte bei der \ac{Arktis} im Lager angekommen sind, habe wurden mithilfe der anderen Auszubildenen der Abteilung IT-Infrastruktur alle Geräte inventarisiert und auf der LANCOM Webseite die Garantieerweiterung aktiviert. 
+Nachdem die bestellten Netzwerkgeräte bei der \ac{Arktis} im Lager angekommen sind, wurden mithilfe der anderen Auszubildenen der Abteilung IT-Infrastruktur alle Geräte inventarisiert und auf der LANCOM Webseite die Garantieerweiterung aktiviert. 
 
 \subsection{Einrichten des Testaufbaus}
 \label{sec:Einrichten des Testaufbaus}
-Nach der Inventarisierung wurden die Access Points verschickt und die anderen Netzwerkkomponenten zum Testaufbau im Testlabor der Abteilung IT Infrastruktur aufgebaut. Die Switches wurden wie im Soll-Netzwerkplan über die dedizierten Stacking-Ports mit \ac{DAC} Kabeln zu einem logischen Switch verbunden. Die Switches und der WLAN Controller wurden mit Strom versorgt und über das Testnetz in der Laborumgebung erreichbar gemacht damit die Komponenten vorkonfiguriert werden können.
+Nach der Inventarisierung wurden die Access Points verschickt und die anderen Netzwerkkomponenten zum Testaufbau im Testlabor der Abteilung IT Infrastruktur aufgebaut. Die Switches wurden wie im Soll-Netzwerkplan über die dedizierten Stacking-Ports mit \ac{DAC} Kabeln zu einem logischen Switch verbunden. Die Switches und der WLAN Controller wurden mit Strom versorgt und über das Testnetz in der Laborumgebung erreichbar gemacht, damit die Komponenten vorkonfiguriert werden können.
 
 
-\subsection{Konfiguration der Layer 2 Switches}
+\subsection{Konfiguration der Access Switches}
 \label{sec:Konfiguration der Layer 2 Switche}
-Die Switches wurden über das Tool Lanconfig per WebUI konfiguriert. Lanconfig prüft über einen Broadcast, welche Lancom Geräte sich im gleichen Netzwerk befinden wie der PC der das Programm ausführt und zeigt die Geräte dann mit IP Adresse an. Für die Anbindung an die Core Switches wurde pro Stack zuerst der \ac{LAG} angelegt. Auf den Ports zum Core wurde VLAN Tagging nach IEE 802.1q eingeschaltet. Der  
+Die Switches wurden über das Tool LANconfig per Webinterface konfiguriert. LANconfig prüft über einen Broadcast, welche LANCOM Geräte sich im gleichen Netzwerk befinden wie der PC der das Programm ausführt und zeigt die Geräte dann mit IP Adresse an. Für die Anbindung an die Core Switches wurde pro Stack zuerst der \ac{LAG} angelegt. Auf den Ports zum Core wurde VLAN Tagging nach IEE 802.1q eingeschaltet.  
 
 \subsection{Konfiguration der Core Switches}
 \label{sec:Konfiguration der Core Switches}
-Die Core 
+Auf den Core Switches wurden die benötigten VLAN's angelegt und VLAN-Tagging eingeschaltet. Die VLANs wurden den entsprechenden Ports zugewiesen. Danach wurden die \ac{LAG}s angelegt. Im Anschluss wurde das Routing zwischen den verschiedenen Schulnetzen konfiguriert.
+
+\subsection{Konfiguration des WLAN-Controllers}
+\label{sec:Konfiguration des WLAN-Controllers}
+Der WLAN-Controller wird mit dem Tool WLANconfig über das Webinterface konfiguriert. Auf dem WLAN-Controller wurden nach Kundenwunsch die \ac{SSID}s angelegt, welche ausgestrahlt werden sollen. Der Verschlüsselungsstandard wurde auf WPA2 gesetzt und die Passwörter wurden nach Kundenwunsch gewählt und für die einzelnen \ac{SSID} gesetzt. Darüber hinaus wurde den Access Points einen Landescode zugeordnet. Über ein integriertes Firewall Regelwerk wurde festgelegt, aus welchen \ac{SSID}s man in welche Netzwerke kommt.
 
 
 
